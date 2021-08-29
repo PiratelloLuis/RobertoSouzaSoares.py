@@ -17,13 +17,13 @@ client = commands.Bot(command_prefix="=", case_insensitive=True)
 # ==================================================================================
 @client.event
 async def on_ready():
-    guild = client.get_guild(631556614465257505)
-    canal = guild.get_channel(765657391457894420)
+    guild = client.get_guild(your_channel_id)
+    canal = guild.get_channel(your_channel_id)
     print('Entramos como {0.user})'.format(client))
     await client.change_presence(
-        activity=discord.Streaming(name="Roleplay de UBER 24/7", url='https://www.twitch.tv/foxinho'))
-    await canal.send(f'TO ONLINE CARALHOOOOOOOOOOOOOO   '
-                     f' https://cdn.discordapp.com/attachments/765657391457894420/850058318542405682/pressao.mp4')
+        activity=discord.Streaming(name="your_mensage", url='your _twitch_url'))
+    await canal.send(f'you_mensage '
+                     f' you_video_link')
 
     # ======================================================================================================================
 
@@ -338,4 +338,4 @@ async def userinfo(ctx, member: discord.Member):
 
 
 
-client.run("ODQ4MDc1MjgwNTM4NjY1MDA0.YLHVpw.a-JLeCsjTkWITmAEFm831zOobFI")
+client.run("YOUR_TOKEN")
