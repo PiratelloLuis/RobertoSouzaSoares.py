@@ -1,0 +1,6 @@
+dependences
+
+pip install youtube_dl
+pip install ffmpeg
+pip install ffprobe
+and install the mmpeg folder on this website https://ffmpeg.org and alocate to the project folder
