@@ -343,4 +343,4 @@ async def userinfo(ctx, member: discord.Member):
 
 
 
-client.run("ODQ4MDc1MjgwNTM4NjY1MDA0.YLHVpw.a-JLeCsjTkWITmAEFm831zOobFI")
+client.run("token")
