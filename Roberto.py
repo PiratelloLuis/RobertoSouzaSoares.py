@@ -28,7 +28,7 @@ async def on_ready():
     @client.event
     async def on_command_error(ctx, error):
         message = (f"{ctx.message.author.mention}, Este comando não existe, ou está errado.")
-        await ctx.send(f"{message}")
+        await ctx.reply(f"{message}")
 
     # ======================================================================================================================
 
@@ -53,7 +53,7 @@ async def on_ready():
                      'Não quero falar agora to ocupado filho da puta.',
                      'Não quero falar.',
                      'Ele não...', ]
-        await ctx.send(f'{random.choice(responses)}')
+        await ctx.reply(f'{random.choice(responses)}')
 
     # ======================================================================================================================
     @client.command(aliases=['online'])
@@ -77,7 +77,7 @@ async def on_ready():
                      f':heart: Caminhões'
                      f' https://cdn.discordapp.com/attachments/765657391457894420/850058318542405682/pressao.mp4',
                      f'https://cdn.discordapp.com/attachments/765657391457894420/865283590207963137/ronaldo_1.mp4']
-        await ctx.send(f'{random.choice(respostas)}')
+        await ctx.reply(f'{random.choice(respostas)}')
 
         # ======================================================================================================================
 
@@ -85,7 +85,7 @@ async def on_ready():
     @commands.has_permissions(manage_messages=True)
     async def clear(ctx, amount=11):
         await ctx.channel.purge(limit=amount)
-        await ctx.send(f"10 Mensagens apagadas", delete_after=amount)
+        await ctx.reply(f"10 Mensagens apagadas", delete_after=amount)
 
 
 # ======================================================================================================================
@@ -93,7 +93,7 @@ async def on_ready():
 @client.command(aliases=["peido"])
 @cooldown(1, 3, BucketType.user)
 async def trava(ctx):
-    await ctx.send(f'https://tenor.com/view/dr-nefario-fart-gun-gif-20054143')
+    await ctx.reply(f'https://tenor.com/view/dr-nefario-fart-gun-gif-20054143')
 
 
 # ======================================================================================================================
@@ -101,7 +101,7 @@ async def trava(ctx):
 @client.command()
 @cooldown(1, 3, BucketType.user)
 async def melhormusica(ctx):
-    await ctx.send(f'https://www.youtube.com/watch?v=LYVAVlYIzpk')
+    await ctx.reply(f'https://www.youtube.com/watch?v=LYVAVlYIzpk')
 
 
 # ======================================================================================================================
@@ -126,9 +126,9 @@ async def mansk(ctx):
 @cooldown(1, 3, BucketType.user)
 async def ping(ctx, arg=None):
     if arg == "pong":
-        await ctx.send("Nice job, you just ponged yourself")
+        await ctx.reply("Nice job, you just ponged yourself")
     else:
-        await ctx.send(f'Pong! ai está o meu ping amigo: {round(client.latency * 100)}ms')
+        await ctx.reply(f'Pong! ai está o meu ping amigo: {round(client.latency * 100)}ms')
 
 
 # ======================================================================================================================
@@ -242,21 +242,21 @@ async def play(ctx, url: str):
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
     await member.ban(reason=reason)
-    await ctx.send(f"{member} foi banido!")
+    await ctx.reply(f"{member} foi banido!")
 
 
 @client.command()
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, user: discord.Member, *, reason=None):
     await member.kick(reason=reason)
-    await ctx.send(f"{member} foi kickado!")
+    await ctx.reply(f"{member} foi kickado!")
 
 
 # ======================================================================================================================
 @client.command()
 async def avatar(ctx, *, avamember: discord.Member = None):
     userAvatarUrl = avamember.avatar_url
-    await ctx.send(f"Avatar de: {avamember.mention} "
+    await ctx.reply(f"Avatar de: {avamember.mention} "
                    f"{userAvatarUrl}")
 
 
@@ -264,7 +264,7 @@ async def avatar(ctx, *, avamember: discord.Member = None):
 @client.command(aliases=['say'])
 async def falar(ctx, *, message):
     await ctx.message.delete()
-    await ctx.send(f"{message}".format(message))
+    await ctx.reply(f"{message}".format(message))
 
 
 # ======================================================================================================================
@@ -292,12 +292,12 @@ async def serverinfo(ctx):
     embed.add_field(name="Membros", value=memberCount, inline=True)
     embed.add_field(name="Criado em", value=time, inline=True)
 
-    await ctx.send(embed=embed)
+    await ctx.reply(embed=embed)
 
 
 @client.command()
 async def ronaldo(ctx):
-    await ctx.send("https://cdn.discordapp.com/attachments/765657391457894420/865283590207963137/ronaldo_1.mp4")
+    await ctx.reply("https://cdn.discordapp.com/attachments/765657391457894420/865283590207963137/ronaldo_1.mp4")
 
 
 # ======================================================================================================================
@@ -320,7 +320,7 @@ async def foinao(ctx):
 @client.command()
 @cooldown(1, 3, BucketType.user)
 async def ouvidizer(ctx):
-    await ctx.send("https://cdn.discordapp.com/attachments/765657391457894420/875177217213214751/ouvidizer_m.mp4")
+    await ctx.reply("https://cdn.discordapp.com/attachments/765657391457894420/875177217213214751/ouvidizer_m.mp4")
 
 
 # ======================================================================================================================
@@ -337,7 +337,7 @@ async def userinfo(ctx, member: discord.Member):
     embed.set_thumbnail(url=f"{member.avatar_url}")
     embed.set_footer(text="Isso é apenas uma moldura")
 
-    await ctx.send(embed=embed)
+    await ctx.reply(embed=embed)
 
 
 
