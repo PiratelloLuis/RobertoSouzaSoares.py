@@ -132,7 +132,6 @@ async def ping(ctx, arg=None):
 
 
 # ======================================================================================================================
-
 @client.command(pass_context=True, aliases=['j', 'comeback', "joi"])
 async def join(ctx):
     channel = ctx.message.author.voice.channel
